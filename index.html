@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+    <!-- JQUERY 3.4.1 -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- HANDLEBARS 4.7.6 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.6/handlebars.js"></script>
+    <!-- MY CSS  -->
+    <link rel="stylesheet" href="css/style.css">
+    <title>Boolfix</title>
+  </head>
+  <body>
+    <!-- Search bar  -->
+    <div class="container">
+      <input id="search" type="text" placeholder="   Cosa vuoi vedere oggi?">
+      <button id="button_search">Cerca</button>
+    </div>
+    <!-- Script Handlebars film -->
+    <script id="movie-template" type="text/x-handlebars-template">
+      <ul class="film">
+        <li>{{title}}</li>
+        <li>{{original_title}}</li>
+        <li>{{original_language}}</li>
+        <li>{{vote_average}}</li>
+      </ul>
+    </script>
+    <!-- MY JAVASCRIPT -->
+    <script src="js/myjs.js"></script>
+  </body>
+</html>
