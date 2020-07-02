@@ -6,6 +6,13 @@ $(document).ready(function () {
     var typed = $('#search').val();
     searchMovie(typed);
   });
+// ON ENTER SEARCHING FUNCTION
+  $("#search").keypress(function(event){
+   if (event.which == 13) {
+     var typed = $("#search").val();
+     searchMovie(typed);
+   }
+ });
 // SEARCHING FILM AND TV SHOW FUNCTION
   function searchMovie(title){
     $.ajax({
