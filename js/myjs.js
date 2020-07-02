@@ -33,10 +33,23 @@ $(document).ready(function () {
         "title" : movieInfo[i].title,
         "original_title" : movieInfo[i].original_title,
         "original_language" : movieInfo[i].original_language,
-        "vote_average" : movieInfo[i].vote_average
+        "vote_average" : stars(movieInfo[i].vote_average)
       }
       var html = template(movieElement);
       $('.container').append(html);
     }
+  }
+// CHANGE RATING SISTEM 0/10 TO STAR SISTEM 0/5 STARS
+  function stars(rating) {
+    var vote = Math.floor(rating / 2);
+    var stars = '';
+    for (var i = 1; i <= 5; i++) {
+        if (i <= vote) {
+          stars += '<i class="fas fa-star"></i>';
+        }else {
+          stars += '<i class="far fa-star"></i>';
+        }
+    }
+    return stars;
   }
 });
