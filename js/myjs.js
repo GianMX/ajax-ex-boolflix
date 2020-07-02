@@ -7,12 +7,12 @@ $(document).ready(function () {
     searchMovie(typed);
   });
 // SEARCHING FILM FUNCTION
-  function searchMovie(titleFilm){
+  function searchMovie(title){
     $.ajax({
-      url : "https://api.themoviedb.org/3/search/movie",
+      url : "https://api.themoviedb.org/3/search/multi",
       data : {
         "api_key" : "804caa4c0ae7555a24a69b36e4a0e6fe",
-        "query" : titleFilm,
+        "query" : title,
       },
       method : "GET",
       success : function (data) {
@@ -31,7 +31,10 @@ $(document).ready(function () {
     for (var i = 0; i < movieInfo.length; i++) {
       var movieElement = {
         "title" : movieInfo[i].title,
+        "title_name" : movieInfo[i].name,
         "original_title" : movieInfo[i].original_title,
+        "original_name" : movieInfo[i].original_name,
+        "copertina" : stampaCopertina(movieInfo[i].poster_path),
         "original_language" : showFlag(movieInfo[i].original_language),
         "vote_average" : stars(movieInfo[i].vote_average)
       }
@@ -61,5 +64,10 @@ $(document).ready(function () {
       flagPNG ='<img class="flag" src="img/missing.png" alt="flag">'
     }
   return flagPNG;
+  }
+// PRINT ON SCREEN COVER
+  function stampaCopertina(url){
+  var finalUrl = "https://image.tmdb.org/t/p/" + "w185" + url;
+  return finalUrl;
   }
 });

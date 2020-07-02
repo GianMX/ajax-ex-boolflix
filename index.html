@@ -21,8 +21,9 @@
     <!-- Script Handlebars film -->
     <script id="movie-template" type="text/x-handlebars-template">
       <ul class="film">
-        <li>{{title}}</li>
-        <li>{{original_title}}</li>
+        <li>{{title}}{{title_name}}</li>
+        <li class="copertina"><img src="{{{copertina}}}" alt="poster"></li>
+        <li>{{original_name}}{{original_title}}</li>
         <li>{{{original_language}}}</li>
         <li>{{{vote_average}}}</li>
       </ul>

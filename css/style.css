@@ -4,6 +4,13 @@
   padding: 0;
   box-sizing: border-box;
 }
+/* CSS STYLE ELEMENT HELPING ( WILL BE PLACE BETTER LATER IN PROJECT) */
 .fas {
   color: gold;
+}
+img.flag {
+  height: 10px;
+}
+ul {
+  padding: 10px;
 }
