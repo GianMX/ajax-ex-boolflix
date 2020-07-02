@@ -6,7 +6,7 @@ $(document).ready(function () {
     var typed = $('#search').val();
     searchMovie(typed);
   });
-// SEARCHING FILM FUNCTION
+// SEARCHING FILM AND TV SHOW FUNCTION
   function searchMovie(title){
     $.ajax({
       url : "https://api.themoviedb.org/3/search/multi",
@@ -23,7 +23,7 @@ $(document).ready(function () {
       }
     });
   }
-// PRINT ON LIST ITEM SEARCHED FILM
+// PRINT ON LIST ITEM SEARCHED FILM AND TV SHOW
   function printMovie(movieInfo) {
     $('ul.film').remove();
     var source = $('#movie-template').html();
@@ -65,9 +65,11 @@ $(document).ready(function () {
     }
   return flagPNG;
   }
-// PRINT ON SCREEN COVER
+// PRINT ON SCREEN COVER OR DEFAULT IMG IF NOT ON URL
   function stampaCopertina(url){
-  var finalUrl = "https://image.tmdb.org/t/p/" + "w185" + url;
-  return finalUrl;
+  var coverUrl = 'img/nocover.jpg'
+    if(url) {coverUrl = "https://image.tmdb.org/t/p/" + "w185" + url;
+    }
+  return coverUrl;
   }
 });
