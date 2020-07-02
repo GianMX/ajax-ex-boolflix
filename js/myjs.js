@@ -36,7 +36,8 @@ $(document).ready(function () {
         "original_name" : movieInfo[i].original_name,
         "copertina" : stampaCopertina(movieInfo[i].poster_path),
         "original_language" : showFlag(movieInfo[i].original_language),
-        "vote_average" : stars(movieInfo[i].vote_average)
+        "original_speak" : movieInfo[i].original_language,
+        "vote_average" : stars(movieInfo[i].vote_average),
       }
       var html = template(movieElement);
       $('.container').append(html);
