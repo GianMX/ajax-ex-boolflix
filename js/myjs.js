@@ -32,7 +32,7 @@ $(document).ready(function () {
       var movieElement = {
         "title" : movieInfo[i].title,
         "original_title" : movieInfo[i].original_title,
-        "original_language" : movieInfo[i].original_language,
+        "original_language" : showFlag(movieInfo[i].original_language),
         "vote_average" : stars(movieInfo[i].vote_average)
       }
       var html = template(movieElement);
@@ -51,5 +51,15 @@ $(document).ready(function () {
         }
     }
     return stars;
+  }
+// CHANGE LANGUAGE IN LANGUAGE FLAG (IF LANGUAGE NOT AMONG AVAILABLES WILL BE SHOW UNKNOW FLAG)
+  function showFlag(flagPNG) {
+    var availableLanguages = ["it", "de", "es", "uk", "fr", "en"];
+      if (availableLanguages.includes(flagPNG)) {
+      flagPNG ='<img class="flag" src="img/' + flagPNG  +'.png" alt="flag">'
+    } else {
+      flagPNG ='<img class="flag" src="img/missing.png" alt="flag">'
+    }
+  return flagPNG;
   }
 });
