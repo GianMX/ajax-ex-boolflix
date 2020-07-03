@@ -65,7 +65,7 @@ $(document).ready(function () {
   }
 // CHANGE LANGUAGE IN LANGUAGE FLAG (IF LANGUAGE NOT AMONG AVAILABLES WILL BE SHOW UNKNOW FLAG)
   function showFlag(flagPNG) {
-    var availableLanguages = ["it", "de", "es", "uk", "fr", "en"];
+    var availableLanguages = ["it", "de", "es", "uk", "fr", "en","ja","cn", "ru"];
       if (availableLanguages.includes(flagPNG)) {
       flagPNG ='<img class="flag" src="img/' + flagPNG  +'.png" alt="flag">'
     } else {
@@ -75,8 +75,8 @@ $(document).ready(function () {
   }
 // PRINT ON SCREEN COVER OR DEFAULT IMG IF NOT ON URL
   function stampaCopertina(url){
-  var coverUrl = 'img/nocover.jpg'
-    if(url) {coverUrl = "https://image.tmdb.org/t/p/" + "w185" + url;
+  var coverUrl = 'img/nocover.png'
+    if(url) {coverUrl = "https://image.tmdb.org/t/p/" + "w342" + url;
     }
   return coverUrl;
   }

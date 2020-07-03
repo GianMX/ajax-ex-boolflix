@@ -8,24 +8,35 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <!-- HANDLEBARS 4.7.6 -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.6/handlebars.js"></script>
+    <!-- GOOGLE FONT -->
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&display=swap" rel="stylesheet">
     <!-- MY CSS  -->
     <link rel="stylesheet" href="css/style.css">
-    <title>Boolfix</title>
+    <title>Boolflix</title>
   </head>
   <body>
     <!-- Search bar  -->
-    <div class="container">
-      <input id="search" type="text" placeholder="   Cosa vuoi vedere oggi?">
-      <button id="button_search">Cerca</button>
+    <header class="head">
+      <div class="logo">
+         <a><img src="https://fontmeme.com/permalink/200703/4dbc3838289b9a777c41954188da3ad7.png" alt="netflix-font" border="0"></a>
+       </div>
+      <div class="search_bar">
+        <input id="search" type="text" placeholder="   Cosa vuoi vedere oggi?">
+        <button id="button_search">Cerca</button>
+      </div>
+    </header>
+    <div class="wrap">
+      <!-- Container for film/tv series cards -->
+      <div class="container"></div>
     </div>
     <!-- Script Handlebars film -->
     <script id="movie-template" type="text/x-handlebars-template">
       <ul class="film">
-        <li>TITOLO : {{title}}{{title_name}}</li>
+        <li class="title_height"><span>TITOLO</span>  {{title}}{{title_name}}</li>
         <li class="copertina"><img src="{{{copertina}}}" alt="poster"></li>
-        <li>TITOLO ORIGINALE : {{original_name}}{{original_title}}</li>
-        <li>LINGUA ORIGINALE : {{original_speak}} {{{original_language}}}</li>
-        <li>RATING : {{{vote_average}}}</li>
+        <li><span>TITOLO ORIGINALE</span>  {{original_name}}{{original_title}}</li>
+        <li><span>LINGUA ORIGINALE</span>  {{original_speak}} {{{original_language}}}</li>
+        <li><span>RATING</span>  {{{vote_average}}}</li>
       </ul>
     </script>
     <!-- MY JAVASCRIPT -->
