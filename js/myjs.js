@@ -5,12 +5,14 @@ $(document).ready(function () {
   function () {
     var typed = $('#search').val();
     searchMovie(typed);
+    reset();
   });
 // ON ENTER SEARCHING FUNCTION
   $("#search").keypress(function(event){
    if (event.which == 13) {
      var typed = $("#search").val();
      searchMovie(typed);
+     reset();
    }
  });
 // SEARCHING FILM AND TV SHOW FUNCTION
@@ -81,4 +83,8 @@ $(document).ready(function () {
     }
   return coverUrl;
   }
+// FUNCTION RESET
+function reset() {
+  $('.container').html(' ');
+}
 });
