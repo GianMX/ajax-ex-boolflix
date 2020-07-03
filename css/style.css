@@ -20,10 +20,8 @@ ul {
   font-weight: bold;
 }
 /* CONTAINER  */
-/* for fix background color grey */
 .wrap {
   background-color: grey;
-  height: 100%;
 }
 .container {
   display: flex;
@@ -31,13 +29,13 @@ ul {
   text-align: center;
 }
 .container > div {
-  margin: 5px 0;
-  border: 1px solid black;
+  margin-top: 10px ;
+  margin-bottom: 5px;
 }
 .container li {
   padding-bottom: 5px;
+  color: white;
 }
-/* rules for js element */
 .title_height {
   font-size: 20px;
 }
@@ -50,6 +48,32 @@ ul {
 img.flag {
   height: 10px;
 }
-.container li span {
+.container li span,p {
   color: gold;
+}
+.movie {
+  position: relative;
+  cursor: pointer;
+}
+.movie:hover .locandina {
+  filter: brightness(0.2);
+  transition: 0.1s;
+}
+
+.movie:hover .movie-info {
+  opacity: 1.5;
+  transition: 0.1s;
+}
+
+.movie-info{
+  z-index: 1;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+}
+.overview {
+  max-height: 150px;
+  overflow: hidden;
 }

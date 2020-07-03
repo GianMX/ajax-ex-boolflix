@@ -32,7 +32,7 @@ $(document).ready(function () {
   }
 // PRINT ON LIST ITEM SEARCHED FILM AND TV SHOW
   function printMovie(movieInfo) {
-    $('ul.film').remove();
+    $('ul.movie-info').remove();
     var source = $('#movie-template').html();
     var template = Handlebars.compile(source);
     for (var i = 0; i < movieInfo.length; i++) {
@@ -45,6 +45,7 @@ $(document).ready(function () {
         "original_language" : showFlag(movieInfo[i].original_language),
         "original_speak" : movieInfo[i].original_language,
         "vote_average" : stars(movieInfo[i].vote_average),
+        "overview": movieInfo[i].overview,
       }
       var html = template(movieElement);
       $('.container').append(html);
