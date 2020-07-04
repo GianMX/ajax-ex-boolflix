@@ -15,13 +15,22 @@ $(document).ready(function () {
      reset();
    }
  });
+// FUNCTION FOR HAVING BOTH URL (MOVIE AND TV SERIES)
+  function searchMovie(typed){
+    if (typed != ""){
+      $(".movie .container").text("");
+      searchSome(typed, "https://api.themoviedb.org/3/search/movie");
+      searchSome(typed, "https://api.themoviedb.org/3/search/tv");
+    }
+  }
 // SEARCHING FILM AND TV SHOW FUNCTION
-  function searchMovie(title){
+  function searchSome(string,url){
     $.ajax({
-      url : "https://api.themoviedb.org/3/search/multi",
+      method : "GET",
+      url : url,
       data : {
         "api_key" : "804caa4c0ae7555a24a69b36e4a0e6fe",
-        "query" : title,
+        "query" : string,
       },
       method : "GET",
       success : function (data) {
@@ -34,7 +43,6 @@ $(document).ready(function () {
   }
 // PRINT ON LIST ITEM SEARCHED FILM AND TV SHOW
   function printMovie(movieInfo) {
-    $('ul.movie-info').remove();
     var source = $('#movie-template').html();
     var template = Handlebars.compile(source);
     for (var i = 0; i < movieInfo.length; i++) {
